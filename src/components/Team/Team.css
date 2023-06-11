@@ -1,0 +1,173 @@
+.experience_container {
+  margin: 0 auto;
+}
+
+.experience_container>div {
+  background: var(--color-bg-variant);
+  padding: 2.4rem 5rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.experience_container>div:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  cursor: default;
+}
+
+.profiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  min-width: 300px;
+  height: 350px;
+  background-color: var(--color-bg);
+  border-radius: 15px;
+  box-shadow: -1rem 0 3rem #000;
+  transition: 0.4s ease-out;
+  position: relative;
+  padding: 1.5rem;
+  transition: 0.2s;
+}
+
+.card:not(:first-child) {
+  margin-left: -130px;
+}
+
+/* .card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover~.card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+} */
+
+.card:hover~.card {
+  transform: translateX(130px);
+}
+
+.card:hover {
+  transform: translateY(-1rem);
+}
+
+.title {
+  color: var(--color-primary-variant);
+  font-weight: 200;
+  padding-top: 2rem;
+  text-align: center;
+  font-family: monospace;
+}
+
+.sub-title {
+  color: var(--color-primary);
+  text-align: center;
+  padding: 10px;
+}
+
+.circle {
+  position: absolute;
+  top: 150px;
+  left: calc(50% - 60px);
+}
+
+
+
+.card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+
+.card .round {
+  border: 1px solid #03BFCB;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+.round {
+  border: 1px solid #03BFCB;
+  border-radius: 50%;
+  padding: 7px;
+  width: 90px;
+  /* Adjust the size as needed */
+  height: 90px;
+}
+
+
+/*=======Media Queries(Medium)==========*/
+
+@media screen and (max-width:1024px) {
+  .experience_container {
+    grid-template-columns: 1fr;
+  }
+
+  .experience_container>div {
+    width: 80%;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+
+  .experience_content {
+    padding: 1rem;
+  }
+
+
+}
+
+
+/*=======Media Queries(Small)==========*/
+
+@media screen and (max-width:600px) {
+  .experience_container {
+    gap: 1rem;
+  }
+
+  .experience_container>div {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .profiles {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    left: 0px;
+  }
+
+  .card:not(:first-child) {
+    margin-left: 0px !important;
+    margin-top: -90px;
+    transform: translateX(0);
+
+  }
+
+  .card:not(:first-child):hover {
+    margin-top: -90px;
+    transform: translateY(-1rem);
+
+  }
+
+  .card:hover~.card {
+    transform: none;
+  }
+
+
+  .card:hover {
+    transform: none;
+    z-index: 2;
+  }
+
+  .card:hover .stroke {
+    stroke-dashoffset: 0%;
+    transition: none;
+  }
+
+}
